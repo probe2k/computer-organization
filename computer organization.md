@@ -58,8 +58,6 @@ global \_startglobal is a NASM specific directive (works essentially with Netwid
 
 ldr r0, adr\_varloads the memory address of the variable **var** into r0 register with the label/tag **adr\_var**
 
-****
-
 ldr r1, \[r0\]loads the value at memory address found in r0 to the register r1
 
 str r1, \[r0\]stores the value found in r1 to the memory address of register r0
@@ -87,3 +85,37 @@ AC: Accumulator or AC for short is a unit type register used in several micropro
 MAR: MAR or Memory Address Register manages flow of data from the primary memory to the processor. It holds the memory address to/from which the data is to be transferred
 
 MDR: MDR or Memory Data Register also manages flow of data form the primary memory to the processor. It however holds the actual data value instead of memory address which is to be read from/written to the primary memory.
+
+BUS
+
+Bus is a communication header for ensuring transfer of data between hardware components throughout the motherboard. The bus manages junctions which dictate communication protocols. The bus width also called link-width is the measure of the frequency of the bits a bus is able to send simultaneously. Bus speed or link speed on the other hand is the count of bits sent per second.
+
+Ordinarily, buses are of 3 types
+
+1. Address Bus
+
+2. Data Bus
+
+3. Control Bus
+
+1. Address Bus:- The address bus in computer architecture is responsible for handling the memory addresses that the processor will be reading from. It handles block loading, stack indexes and a lot more. It usually holds communication amongst process threads and the processor itself.
+
+2. Data Bus:- These are high speed circuit mounts or passthroughs (in some cases) that are used to read the actual data from the instructed entry-gate memory locations of both primary and secondary memories.
+
+3. Control Bus:- A control bus dictates the flow of data and is used as a flag for whether a transaction is being done on a certain link width of a bus or not. It also manages the R/W operations to ensure that the queues are processed correctly and don’t cause a bottleneck/throttling.
+
+There are some other buses used in computer system that ensure the proper functioning of it. One of the major and essential one is FSB or Front Side Bus
+
+FSB:- Frontside bus or FSB is a system interfacing bus mounted on the north bridge. This bus is extremely fast as it sits on the CPU sockets, and can be used to communicate with the CPU L2 caches as well. The same purpose is served by an EV6 bus on a similar amd64 architecture. Similarly, some processors also have a back-side bus to communicate with slower cache or for handling interface requests.
+
+BRIDGE
+
+Bus bridge in computer terminology is the connection between two high speed junctions, be it memory modules, or ultra fast processor caches, or just two high speed buses. Common data-link buses are called bus bridge which are used by many memory interfaces. In Layman’s terms, it interfaces between two different bus types.
+
+The two prominent bridges used in a chipset are Northbridge and Southbridge.
+
+Northbridge:- Northbridge (aka Host bridge) is a interfacing junction connecting the processor to the fast speed data and address buses. It’s a high performance bridge linking fast components to reduce latency, such as RAM, PCI-E, AGP, and the southbridge. On the newer Intel chips with iGPU (integrated graphics processing units), it was termed as GMCH (Graphics & Memory Controller Hub), or just MCH (Memory Controller Hub) before Sandy Bridge, and before the rise of Raven Ridge (APU – AMD).
+
+Southbridge:- Southbridge on the other hand implements low speed interfacing junction with IDEs (Integrated Drive Electronics), USB, NIC, BIOS, etc. In some cases, it even communicates with SATA bay, and similar passthroughs. It was recoined as Platform Controller Hub (PCH) or Fusion Controller Hub (FCH) in case of AMD.
+
+PERFORMANCE OF A CPU
